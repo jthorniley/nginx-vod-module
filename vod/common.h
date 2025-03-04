@@ -473,5 +473,6 @@ vod_and_bits(
 }
 
 u_char* vod_append_hex_string(u_char* p, const u_char* buffer, uint32_t buffer_size);
+u_char* vod_append_hex_string_lower(u_char* p, const u_char* buffer, uint32_t buffer_size);
 
 #endif // __COMMON_H__

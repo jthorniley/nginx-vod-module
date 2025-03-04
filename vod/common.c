@@ -58,3 +58,17 @@ vod_append_hex_string(u_char* p, const u_char* buffer, uint32_t buffer_size)
 	}
 	return p;
 }
+
+u_char*
+vod_append_hex_string_lower(u_char* p, const u_char* buffer, uint32_t buffer_size)
+{
+	const u_char* buffer_end = buffer + buffer_size;
+	static const u_char hex_chars[] = "0123456789abcdef";
+
+	for (; buffer < buffer_end; buffer++)
+	{
+		*p++ = hex_chars[*buffer >> 4];
+		*p++ = hex_chars[*buffer & 0x0F];
+	}
+	return p;
+}

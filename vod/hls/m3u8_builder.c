@@ -635,7 +635,7 @@ m3u8_builder_build_index_playlist(
 		if (encryption_params->return_iv)
 		{
 			p = vod_copy(p, encryption_key_tag_iv, sizeof(encryption_key_tag_iv) - 1);
-			p = vod_append_hex_string(p, encryption_params->iv, sizeof(encryption_params->iv_buf));
+			p = vod_append_hex_string_lower(p, encryption_params->iv, sizeof(encryption_params->iv_buf));
 		}
 
 		// keyformat
